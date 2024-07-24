@@ -48,13 +48,14 @@ function App() {
 
   return (
     <>
-      <div className="text-center p-4">
-        <h1 className="text-4xl mb-4">BruteForce Dictionary</h1>
+      <div className="text-center p-4 bg-slate-800 h-screen">
+        <h1 className="text-4xl mb-4 text-white">BruteForce Dictionary</h1>
         <div className="flex flex-col sm:flex-row justify-around items-center h-auto sm:h-20 pt-5">
           <div className="mt-4 sm:mt-0">
             <input
-              className="border border-black mr-2 p-1"
+              className="border border-white mr-2 p-1"
               type="text"
+              placeholder='Enter Names'
               value={adtask}
               onChange={(e) => setAdtask(e.target.value)}
             />
@@ -73,7 +74,8 @@ function App() {
           </div>
           <div className="mt-4 sm:mt-0">
             <input
-              className="border border-black mr-2 p-1"
+              className="border border-white mr-2 p-1"
+              placeholder='Enter Numbers'
               type="number"
               value={dateText}
               onChange={(e) => setDateText(e.target.value)}
@@ -108,26 +110,26 @@ function App() {
             Clear List
           </button>
           <textarea
-            className="border border-black p-2 w-full max-w-4xl mt-4"
+            className="border border-white p-2 w-1/33 max-w-4xl mt-4"
             name=""
             id=""
-            cols="100"
-            rows="10"
+            cols="80"
+            rows="8"
             readOnly
             value={bruteDict.join('\n')}
           ></textarea>
         </div>
         <div className="flex flex-col sm:flex-row justify-around mt-6">
           <ul className="list-none">
-            <li className="font-bold text-xl font-serif">Names</li>
+            <li className="font-bold text-xl font-serif text-white">Names</li>
             {tasks.map((task, index) => (
-              <li key={index}>{task}</li>
+              <li className='text-white' key={index}>{task}</li>
             ))}
           </ul>
           <ul>
-            <li className="font-bold text-xl font-serif">Numbers</li>
+            <li className="font-bold text-xl font-serif text-white">Numbers</li>
             {dates.map((date, index) => (
-              <li key={index}>{date}</li>
+              <li className='text-white' key={index}>{date}</li>
             ))}
           </ul>
         </div>
